@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			    xmlns:tools="http://schemas.android.com/tools"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    tools:context=".MainActivity" >
+
+    
+      <TextView android:id="@+id/bildNrTextview"          
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignBottom="@+id/starteWebRequestButton"
+	            android:layout_alignParentTop="true"
+	            android:paddingLeft="10dp"
+	            android:text="@string/bild_nr_label"
+	            android:gravity="center_vertical"	            
+	            android:textSize="20sp" />
+
+       <EditText android:id="@+id/editTextBildNummer"             
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:layout_toRightOf="@id/bildNrTextview"	          
+	             android:textSize="20sp"
+	             android:gravity="center_vertical"
+	             android:maxLength="2"   
+	             android:inputType="number" />
+    
+	   <Button android:id="@+id/starteWebRequestButton"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_toRightOf="@+id/editTextBildNummer"
+	           android:text="@string/button_starte_web_request" 
+	           android:onClick="onStartButtonBetaetigt" />
+	   
+	   <Button android:id="@+id/starteWebRequestButtonZufall"
+			   android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_toRightOf="@+id/starteWebRequestButton"
+	           android:text="@string/button_starte_web_request_zufall"
+	           android:onClick="onStartButtonZufall" />
+	       
+	   	   	                	                	       	             
+ 
+	   <ImageView android:id="@+id/imageViewElement"
+	              android:contentDescription="@string/image_view_beschreibung"
+	              android:layout_width="match_parent"
+	              android:layout_height="wrap_content" 
+	              android:layout_alignParentBottom="true"
+	              android:layout_margin="10dp"
+	              android:background="#C0C0C0"
+	              android:layout_below="@id/bildNrTextview"  />
+       
+	   
+	   <!-- Progress-Bar in in die Mitte der Activity setzen (ist nur während des Ladens sichtbar). -->
+	   <ProgressBar android:id="@+id/ladeProgressBar"
+                    android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_centerInParent="true" /> 
+	                
+	   	   
+</RelativeLayout>

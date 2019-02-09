@@ -1,0 +1,11 @@
+# Diese Datei spezifiziert die Dateien und Unterordner, die NICHT
+# in die Versionsverwaltung aufgenommen werden sollen (v.a., weil
+# Sie von Android Studio selbst erzeugt werden können).
+
+local.properties
+
+.idea/
+.gradle/
+
+app/build
+
