@@ -169,7 +169,9 @@ public class MainActivity extends Activity {
 			_startButton.post( new Runnable() { 				
 				@Override
 				public void run() {
-					Toast.makeText(MainActivity.this, "Interner Fehler: Unzulässige Bild-Nummer: " + _bildNummer, Toast.LENGTH_LONG).show();
+					Toast.makeText(MainActivity.this,
+							       "Interner Fehler: Unzulässige Bild-Nummer: " + _bildNummer,
+							        Toast.LENGTH_LONG).show();
 					buttonsEinschalten(true);
 				}
 			});
@@ -185,7 +187,7 @@ public class MainActivity extends Activity {
 		
 		HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 		
-		Log.i(TAG4LOGGING, "Response Code of HTTP Request: " + urlConnection.getResponseCode() + " - " + urlConnection.getResponseMessage() );
+		Log.i(TAG4LOGGING, "Response Code von HTTP-Request: " + urlConnection.getResponseCode() + " - " + urlConnection.getResponseMessage() );
 		
 		return new BufferedInputStream( urlConnection.getInputStream() );
 	}
@@ -211,8 +213,8 @@ public class MainActivity extends Activity {
 				@Override
 				public void run() {
 					Toast.makeText(MainActivity.this,
-							"Fehler: Leeres Bitmap-Objekt als Ergebnis der Dekodierung erhalten.",
-							Toast.LENGTH_LONG).show();
+							       "Fehler: Leeres Bitmap-Objekt als Ergebnis der Dekodierung erhalten.",
+							        Toast.LENGTH_LONG).show();
 					buttonsEinschalten(true);
 				}
 			});
