@@ -61,6 +61,7 @@ public class MainActivity extends Activity {
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
@@ -95,8 +96,10 @@ public class MainActivity extends Activity {
 	 */
 	protected void setzeZufallsBildNr() {
 		
-		if (_random == null) 
+		if (_random == null) {
+
 			_random = new Random();
+		}
 		
 		int zufallsZahl = _random.nextInt(100); // Zahl 0..99
 		
@@ -120,6 +123,7 @@ public class MainActivity extends Activity {
 		
 		// Prüfen, ob überhaupt eine Bild-Nummer eingegeben wurde
 		if (bildNummerAlsStr.length() == 0) {
+
 			Toast.makeText(this,
                            "Bitte eine Bild-Nummer von 0 bis 99 eingeben!",
                            Toast.LENGTH_LONG).show();
@@ -129,9 +133,11 @@ public class MainActivity extends Activity {
 		
 		// Bild-Nummer in int-Zahl umwandeln
 		try {
+
 			_bildNummer = Integer.parseInt(bildNummerAlsStr);
 		}
 		catch (Exception ex) {
+
 			Toast.makeText(this,
                            "Fehler beim Parsen der Bild-Nummer: " + ex,
                            Toast.LENGTH_LONG).show();
@@ -166,9 +172,11 @@ public class MainActivity extends Activity {
 		// Schritt 0: Sicherheits-Überprüfung
 		if (_bildNummer < 0 || _bildNummer > 99) {
 						
-			_startButton.post( new Runnable() { 				
+			_startButton.post( new Runnable() {
+
 				@Override
 				public void run() {
+
 					Toast.makeText(MainActivity.this,
 							       "Interner Fehler: Unzulässige Bild-Nummer: " + _bildNummer,
 							        Toast.LENGTH_LONG).show();
