@@ -62,8 +62,8 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		super.onCreate( savedInstanceState     );
+		setContentView( R.layout.activity_main );
 		
 		_bildNummerEditText = findViewById( R.id.editTextBildNummer           );
 		_imageView          = findViewById( R.id.imageViewElement             );
@@ -218,8 +218,10 @@ public class MainActivity extends Activity {
 			Log.e(TAG4LOGGING, "Leeres Bitmap-Objekt als Ergebnis der Dekodierung erhalten.");
 
 			_startButton.post( new Runnable() {
+
 				@Override
 				public void run() {
+
 					Toast.makeText(MainActivity.this,
 							       "Fehler: Leeres Bitmap-Objekt als Ergebnis der Dekodierung erhalten.",
 							        Toast.LENGTH_LONG).show();
@@ -233,8 +235,10 @@ public class MainActivity extends Activity {
 			// Die Bilder sollten immer die Größe 512x512 haben
 
 			_imageView.post( new Runnable() {
+
 				@Override
 				public void run() {
+
 					_imageView.setImageBitmap(bitmap);
 					buttonsEinschalten(true);
 				}
@@ -260,16 +264,22 @@ public class MainActivity extends Activity {
 		
 		final boolean buttonsAktivFinal = buttonsAktiv; 
 		
-		_startButton.post(new Runnable() {			
+		_startButton.post(new Runnable() {
+
 			@Override
 			public void run() {
+
 				_startButton.setEnabled      (buttonsAktivFinal);
 				_startButtonZufall.setEnabled(buttonsAktivFinal);
 				
-				if (buttonsAktivFinal)
+				if (buttonsAktivFinal) {
+
 					_progressBar.setVisibility(View.INVISIBLE); // unsichtbar, aber Platz wird für Layout berücksichtigt
-				else
+
+				} else {
+
 					_progressBar.setVisibility(View.VISIBLE);
+				}
 			}
 		});
 	}
@@ -297,9 +307,10 @@ public class MainActivity extends Activity {
 				
 				InputStream is = holeDatenVonWebAPI();
 				
-				if (is == null) 
+				if (is == null) {
 					throw new Exception("Leeren InputStream als Ergebnis von HTTP-Request erhalten.");
-				
+				}
+
 				bildDarstellen(is);
 				
 			}
@@ -309,9 +320,11 @@ public class MainActivity extends Activity {
 			    
 				final Exception exception = ex;
 				
-				_startButton.post( new Runnable() { 				
+				_startButton.post( new Runnable() {
+
 					@Override
 					public void run() {
+
 						Toast.makeText(MainActivity.this,
                                        "Exception aufgetreten: " + exception,
                                        Toast.LENGTH_LONG).show();

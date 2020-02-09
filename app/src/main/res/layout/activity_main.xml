@@ -10,6 +10,7 @@
 	            android:layout_height="wrap_content"
 	            android:layout_alignBottom="@+id/starteWebRequestButton"
 	            android:layout_alignParentTop="true"
+		        android:layout_marginRight="5sp"
 	            android:paddingLeft="10dp"
 	            android:text="@string/bild_nr_label"
 	            android:gravity="center_vertical"	            
@@ -18,7 +19,9 @@
        <EditText android:id="@+id/editTextBildNummer"             
 	             android:layout_width="wrap_content"
 	             android:layout_height="wrap_content"
-	             android:layout_toRightOf="@id/bildNrTextview"	          
+	             android:layout_toRightOf="@id/bildNrTextview"
+		         android:layout_marginRight="10sp"
+		         android:layout_marginTop="5sp"
 	             android:textSize="20sp"
 	             android:gravity="center_vertical"
 	             android:maxLength="2"   
@@ -28,6 +31,8 @@
 	           android:layout_width="wrap_content"
 	           android:layout_height="wrap_content"
 	           android:layout_toRightOf="@+id/editTextBildNummer"
+		       android:layout_marginTop="5dp"
+		       android:layout_alignParentTop="true"
 	           android:text="@string/button_starte_web_request" 
 	           android:onClick="onStartButtonBetaetigt" />
 	   
@@ -35,11 +40,12 @@
 			   android:layout_width="wrap_content"
 	           android:layout_height="wrap_content"
 	           android:layout_toRightOf="@+id/starteWebRequestButton"
+		       android:layout_marginTop="5dp"
+		       android:layout_alignParentTop="true"
 	           android:text="@string/button_starte_web_request_zufall"
 	           android:onClick="onStartButtonZufall" />
 	       
-	   	   	                	                	       	             
- 
+	
 	   <ImageView android:id="@+id/imageViewElement"
 	              android:contentDescription="@string/image_view_beschreibung"
 	              android:layout_width="match_parent"
