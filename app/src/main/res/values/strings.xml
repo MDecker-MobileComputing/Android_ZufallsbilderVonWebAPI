@@ -5,11 +5,11 @@
     <string name="title_activity_main"  >Bild-Datei von Web-API holen</string>
 
     <string name="bild_nr_label">Bild-Nr:</string>
-        
+
     <string name="image_view_beschreibung">Hier wird das von der Web-API geladene Bild angezeigt.</string>
-        
+
     <string name="button_starte_web_request">Laden</string>
-    
+
     <string name="button_starte_web_request_zufall">Zufalls-Bild</string>
-    
+
 </resources>
